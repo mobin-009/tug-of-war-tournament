@@ -1,15 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// 🔐 Replace this with your actual Firebase config from project settings
 const firebaseConfig = {
-    apiKey: "AIzaSyDlQSnvmFL-Ql30Fh-kQMV3OOSatPZZdXU",
-    authDomain: "tugofwarapp.firebaseapp.com",
-    projectId: "tugofwarapp",
-    storageBucket: "tugofwarapp.firebasestorage.app",
-    messagingSenderId: "991261817476",
-    appId: "1:991261817476:web:00bad10d83c7f4c2d3e0d1"
-  };
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
